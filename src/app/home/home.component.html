@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="col-xs-12">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <b class="navbar-brand">CMS</b>
+        
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item navbar-bold" *ngFor="let menu of menus">
+              <a class="nav-link navbar-collapse mr-auto" [routerLink]="[menu]"> {{ menu}}</a>
+                <!-- <span class="sr-only">(current)</span></a> -->
+            </li>
+            <div *ngIf="!valid" >
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item navbar-bold" *ngFor="let logmenu of logmenus">
+                      <a class="nav-link navbar-collapse mr-auto" [routerLink]="[logmenu]"> {{ logmenu }} </a>
+                    </li>
+              </ul>
+            </div>
+            <div *ngIf="valid" >
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item navbar-bold">
+                        <a class="nav-link navbar-collapse mr-auto" (click)="onLogout()" [routerLink]="'/Login'"> {{ logoutmenu }} </a>
+                      </li>
+                </ul>
+              </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                {{ Language }}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" (click)="trans(1)">English</a>
+                <a class="dropdown-item" (click)="trans(2)">हिन्दी</a>
+                <a class="dropdown-item" (click)="trans(3)">Deutschland</a>
+              </div>
+            </li>
+            <li class="nav-item navbar-bold" *ngIf="valid">
+              <div class="navbar-collapse" id="welcome"> Welcome {{ bloggerName }} </div>
+            </li>
+          </ul>
+  
+        <!-- </div> -->
+      </nav>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+a{
+    display: inline;
+    float: left;
+}
+#welcome{
+    color: chocolate;
+    font-weight: 500;
+    float:right;
+    margin: 8px;
+}

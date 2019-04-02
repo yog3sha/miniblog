@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <h1>Dashboard!</h1>
+            <h2 *ngIf="valid"><a (click)="onEdit(currentBloggerId)">Add a new blog!</a></h2>
+        </div>
+        <hr>
+        <div class="row">
+            <div *ngFor="let post of allPosts; index as i" class="col-sm-5 offset-1">
+                <a class="card">
+                    <p> Blog {{ ids[i] }} written by {{ names[i] }}
+                        <button type="button" class="btn btn-primary" *ngIf="valid && isAuther[i]" 
+                        [routerLink]="['/Edit']" (click)="onEdit(currentBloggerId,ids[i])">
+                            Edit
+                        </button>
+                        <br>
+                        <b> {{ myheader[i] }} </b> <br> {{ mycontent[i] }}
+                    </p><br>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-sm-12">
+
+    <div class="col-md-4 offset-4">
+
+      <br>
+      
+        <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+          <div class="form-group">
+            <input type="text" placeholder="Email" id="email" name="email" class="form-control"
+            #email="ngModel" ngModel [class.is-invalid]="(email.invalid && email.touched)" required><br><br>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" id="password" name="password" ngModel class="form-control"
+            #password="ngModel" [class.is-invalid]="password.touched && password.invalid" required><br><br>
+          </div>
+          <button type="submit" class="btn btn-primary offset-4" [disabled]="(email.invalid || password.invalid)" name="submit">Login</button>
+        </form>
+
+    </div>
+  </div>
+</div>

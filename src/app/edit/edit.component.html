@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="col-sm-12">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+
+        <input type="text" name="bloggerId1" #bloggerId1="ngModel" [(ngModel)]="bloggerId" style="display:none"><br>
+        <input type="text" name="bloggername1" #bloggername1="ngModel" [(ngModel)]="bloggerName"  style="display:none"><br>
+        <input type="text" name="blogId1" #blogId1="ngModel" [(ngModel)]="blogId" style="display:none" [disabled]="operation=='create' ? 'true' : 'false'"><br>
+        
+        <label>English Blog Header</label>
+        <input type="text" class="col-md-3 form-control" name="header"
+          #heade1r="ngModel" [(ngModel)]="header"><br>
+
+        <label>English blogcontent</label>
+        <textarea rows="3" cols="80" class="form-control" name="content"
+          #content1="ngModel" [(ngModel)]="content"></textarea><br>
+      
+      <hr>
+        <label>Hindi Blog Header</label>
+        <input type="text" class="col-md-3 form-control" name="hindiHeader"
+          #hindiHeader1="ngModel" [(ngModel)]="hindiHeader" ><br>
+
+        <label>blogcontent</label>
+        <textarea rows="3" cols="80" class="form-control"
+          name="hindiContent" #hindiContent1="ngModel" [(ngModel)]="hindiContent"></textarea><br>
+      <hr>
+
+        <label> German Header</label>
+        <input type="text" class="col-md-3 form-control" name="germanHeader" #germanHeader1="ngModel"
+         [(ngModel)]="germanHeader"><br>
+        <label> German blogcontent</label>
+        <textarea rows="3" cols="80" class="form-control"
+          name="germanContent" #germanContent1="ngModel" [(ngModel)]="germanContent"></textarea><br>
+      <button type="submit" class="btn btn-dark offset-3">Publish</button>
+    </form>
+    <br><br><br><br><br>
+
+  </div>
+</div>

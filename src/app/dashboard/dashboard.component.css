@@ -1,0 +1,18 @@
+a{
+    max-height: 250px;
+    max-width: 300px;
+    display: inline;
+    float: left;
+    padding: 5px;
+}
+a:hover{
+    text-decoration: none;
+    box-shadow: 7px 7px 4px gray;
+}
+
+.card{
+    margin: 5px;
+}
+button{
+    margin: 5px;
+}

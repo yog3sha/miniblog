@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col-md-6 offset-3">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+      <label for="firstName"> <b> First Name : </b></label>
+      <input type="text" class="form-control" [class.is-invalid]="(firstName.invalid && firstName.touched)" name="firstName"
+      id="firstName" #firstName="ngModel" [(ngModel)]="fname" placeholder="Yogesh" required>
+      <br>
+      <label for="lastName"> <b> Last Name : </b></label>
+      <input type="text" class="form-control" name="lastName" id="lastName" #lastName="ngModel"
+      [(ngModel)]="lname" placeholder="Vadekar" required>
+      <br>
+      <label for="contact"> <b> Contact : </b></label>
+      <input type="text" class="form-control" name="contact" id="contact"
+      [(ngModel)]="contact" placeholder="9876543210">
+      <br>
+      <label for="email"> <b> Email : </b></label>
+      <input type="email" class="form-control" name="email" id="email" #email="ngModel"
+      [(ngModel)]="eMail" placeholder="yoyo@angular.io" required>
+      <br>
+      <label for="password"> <b> Password : </b></label>
+      <input type="password" class="form-control" name="password" id="password" #password="ngModel"
+      [(ngModel)]="pwd" placeholder="pass@#$%123" required>
+      <br>
+      <button class="btn btn-default offset-4" type="submit"
+      [disabled]="(firstName.invalid || lastName.invalid || email.invalid || password.invalid)">
+        Register</button> &nbsp;
+      <a [routerLink]="['/Login']"><button class="btn btn-default">Login</button></a>
+    </form>
+  </div>
+</div>
